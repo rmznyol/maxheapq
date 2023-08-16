@@ -14,7 +14,7 @@ class MaxHeap:
     def _swap(self, index1, index2):
         self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
 
-    def insert(self, value):
+    def heappush(self, value):
         self.heap.append(value)
         current = len(self.heap) - 1
 
@@ -40,7 +40,7 @@ class MaxHeap:
                 return 
             
                    
-    def remove(self):
+    def heappop(self):
         match len(self.heap):
             case 0:
                 return None
