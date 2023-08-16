@@ -23,15 +23,14 @@ class MaxHeap:
             current = self._parent(current)
 
     def _sink_down(self,index):
-        value = self.heap[index]
         l = len(self.heap)
         max_index = index
-        while index < l :
+        while True:
             left_index = self._left_child(index)
             right_index = left_index + 1
-            if left_index < l and self.heap[left_index] > value:
+            if left_index < l and self.heap[left_index] > self.heap[max_index]:
                 max_index = left_index
-            if right_index < l and self.heap[right_index] > value:
+            if right_index < l and self.heap[right_index] > self.heap[max_index]:
                 max_index = right_index
             if index != max_index:
                 self._swap(max_index,index)
